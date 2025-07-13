@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Flappy Bird</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/flappyintro.css') }}">
+</head>
+<body>
+  <div class="background"></div>
+  
+  <div class="pipes">
+    <div class="pipe top" style="left: 20%;"></div>
+    <div class="pipe bottom" style="left: 20%;"></div>
+    <div class="pipe top" style="left: 60%;"></div>
+    <div class="pipe bottom" style="left: 60%;"></div>
+  </div>
+  
+  <div class="container">
+    <h1 class="title pixel-corners">FLAPPY BIRD</h1>
+    <h4 class="nametitle pixel-corners">Welcome {{session['name']}}!</h4>
+    
+    <div class="bird" style="top: 30%; left: 15%;"></div>
+    <div class="bird" style="top: 40%; left: 75%;"></div>
+    <div class="bird" style="top: 70%; left: 35%;"></div>
+    
+    <div class="buttons">
+      <form action="/flappy">
+        <button id="play-button" class="btn play pixel-corners" type="submit">Play</button>
+      </form>
+
+      <form action="/fb_leaderboard">
+        <button id="leaderboard-button" class="btn leaderboard pixel-corners" type="submit">Leaderboard</button>
+      </form>
+      
+      <form action="/mainmenu">
+        <button id="quit-button" class="btn pixel-corners" type="submit">Quit</button>
+      </form>
+      
+    </div>
+  </div>
+  <script src="{{ url_for('static', filename='js/flappyintro.js') }}"></script>
+</body>
+</html>
